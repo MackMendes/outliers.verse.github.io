@@ -1,0 +1,118 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 33% 98%;
+    --foreground: 60 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 60 20% 30%;
+    --primary-foreground: 60 20% 98%;
+
+    --secondary: 60 10% 90%;
+    --secondary-foreground: 60 20% 30%;
+
+    --muted: 60 10% 90%;
+    --muted-foreground: 60 5% 40%;
+
+    --accent: 60 10% 90%;
+    --accent-foreground: 60 20% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 60 10% 85%;
+    --input: 60 10% 85%;
+    --ring: 60 20% 30%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 60 10% 10%;
+    --foreground: 60 20% 98%;
+
+    --card: 60 10% 15%;
+    --card-foreground: 60 20% 98%;
+
+    --popover: 60 10% 15%;
+    --popover-foreground: 60 20% 98%;
+
+    --primary: 60 20% 70%;
+    --primary-foreground: 60 10% 10%;
+
+    --secondary: 60 10% 20%;
+    --secondary-foreground: 60 20% 98%;
+
+    --muted: 60 10% 20%;
+    --muted-foreground: 60 10% 70%;
+
+    --accent: 60 10% 20%;
+    --accent-foreground: 60 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 60 10% 20%;
+    --input: 60 10% 20%;
+    --ring: 60 20% 70%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .reveal {
+    @apply opacity-0;
+  }
+  
+  .reveal.active {
+    @apply animate-fade-in;
+  }
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
