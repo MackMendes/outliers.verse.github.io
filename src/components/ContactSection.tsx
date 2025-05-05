@@ -1,17 +1,14 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
+import { toast } from '@/components/ui/sonner';
 
 interface ContactSectionProps {
   language: string;
 }
 
 const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
-  const { toast } = useToast();
-  
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -51,25 +48,22 @@ const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
 
     // Simple validation
     if (!name) {
-      toast({
-        title: language === 'pt' ? content.pt.nameRequired : content.en.nameRequired,
-        variant: "destructive"
+      toast(language === 'pt' ? content.pt.nameRequired : content.en.nameRequired, {
+        description: '',
       });
       return;
     }
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      toast({
-        title: language === 'pt' ? content.pt.emailRequired : content.en.emailRequired,
-        variant: "destructive"
+      toast(language === 'pt' ? content.pt.emailRequired : content.en.emailRequired, {
+        description: '',
       });
       return;
     }
 
     if (!message) {
-      toast({
-        title: language === 'pt' ? content.pt.messageRequired : content.en.messageRequired,
-        variant: "destructive"
+      toast(language === 'pt' ? content.pt.messageRequired : content.en.messageRequired, {
+        description: '',
       });
       return;
     }
@@ -79,8 +73,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
-      toast({
-        title: language === 'pt' ? content.pt.successToast : content.en.successToast,
+      toast(language === 'pt' ? content.pt.successToast : content.en.successToast, {
+        description: '',
       });
       setName('');
       setEmail('');
